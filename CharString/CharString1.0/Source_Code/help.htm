@@ -1,0 +1,2150 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   <!编码-->
+    <head>
+        <title>CharString类介绍</title>
+    </head>
+    <!css效果代码-->
+    <style type="text/css">
+        table {
+            margin: 0 auto;
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+    table th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+    }
+    table td {
+        transition: all 1.1s;  <!--所有变换过度，过度时间：0.5秒-->
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #ffffff;
+    }
+     table td:hover {
+         
+         background-color:#00F0F0;}
+    div{ box-shadow: 0px 0px 10px 0px;
+        text-align:center;
+        background-color:#FFFFFF;
+    }
+    
+    div.syst1 {
+        float: left;
+        padding: 1em;
+        border: 1em solid transparent;
+        background: linear-gradient(white, white) padding-box,
+        repeating-linear-gradient(-45deg,
+        red 0, red 12.5%,
+        transparent 0, transparent 25%,
+        #58a 0, #58a 37.5%,
+        transparent 0, transparent 50%)
+        0 / 5em 5em;
+    }
+    div.syst2 {
+        float: right;
+        padding: 1em;
+        border: 1em solid transparent;
+        background: linear-gradient(white, white) padding-box,
+        repeating-linear-gradient(-45deg,
+        red 0, red 12.5%,
+        transparent 0, transparent 25%,
+        #58a 0, #58a 37.5%,
+        transparent 0, transparent 50%)
+        0 / 5em 5em;
+    }
+  
+    </style>
+    <body  bgcolor="#5CACEE">   <!背景颜色-->
+        <div><h1>CharString帮助手册</h1><div>
+        <!构造-->
+        <div class="syst1">
+        <h1>1.CharString</h1>
+        <table id="CharString" border="1">
+            <tr>
+                <th>函数/声明</th>
+                <th>CharString()</th>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>构造</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>构造CharString类，初始化内部字符指针</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str;//声明与初始化完成，内部字符指针以及函数内存分配完成，且字符指针会被初始化为NULL</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+            <th>重载/声明</th>
+            <th>CharString(const char* str)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>const char* str：要初始化为的字符串</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("this CharString!")//声明并且为该类分配内存，且将字符内存初始化为“this CharString</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <br></br>
+         <!构造end-->
+         <HR align=center>
+        <!释放-->
+        <h1>2.～CharString</h1>
+        <table id="~CharString" border="2">
+            <tr>
+                <th>函数/声明</th>
+                <th>~CharString()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>释放类</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>该类只会在程序结束或者线程执行完成后被调用，作用会释放掉类的内存，下次不可用！</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <br></br>
+        <!Releteend-->
+        <HR align=center>
+        <!Relete-->
+        <h1>3.Relete</h1>
+        <table id="Relete" border="3">
+            <tr>
+                <th>函数/声明</th>
+                <th>void Relete()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>释放</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>释放字符指针空间</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.Relete()//字符指针初始化为NULL</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>调用此API后只会释放字符指针而不释放类，调用此类后可继续调用其它函数，但不可用于打印或者获取字符指针的函数！</td>
+            </tr>
+        </table>
+        <br></br>
+        <!ReleteEnd-->
+        <HR align=center>
+        <!DeleteAppointStr-->
+        <h1>4.DeleteAppointStr</h1>
+        <table id="DeleteAppointStr" border="4">
+            <tr>
+                <th>函数/声明</th>
+                <th>char DeleteAppointStr(char str, int Method, BOOL Retain)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>char str：指定的字符<br></br>int Method：起始遍历位置，比如给0前就从字符的第0个开始，给1就从最后一个字符开始<br></br>bool Retain：是否保留原字符比如hello 删除e后的llo，如果给true则保留e输出he</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>用于删除字符尾巴，指定字符，即可删除字符后的所有字符串</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.DeleteAppointStr(' ',0,false)//删除空格以后的字符，不保留空格</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>helloword</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回1，失败返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <br></br>
+        <!DeleteAppointStr-->
+        <HR align=center>
+        <!GetStrSize-->
+        <h1>5.GetStrSize</h1>
+        <table id="GetStrSize" border="5">
+            <tr>
+                <th>函数/声明</th>
+                <th>signed long long int GetStrSize()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>获取字符串大小</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>用于获取字符串大小，并非实际字符指针指向内存的字节大小</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.GetStrSize()//获取大小</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到的字符串大小，失败返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>获取不包含结尾字符\0</td>
+            </tr>
+        </table>
+        <br></br>
+        <!GetStrSize-->
+        <HR align=center>
+        <!Print_Cmd-->
+        <h1>6.Print_Cmd</h1>
+        <table id="Print_Cmd" border="6">
+            <tr>
+                <th>函数/声明</th>
+                <th>char Print_Cmd()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>用于将字符打印到CMD窗口</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.Print_Cmd()//打印字符</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>hello word</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功打印字符串，失败返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>如果字符为空，返回0</td>
+            </tr>
+        </table>
+        <!Print_Cmd-->
+        <br></br>
+        <HR align=center>
+        <!Input>
+            <h1>7.Input</h1>
+            <table id="Input" border="7">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>char Input(const char *Str)</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>const char *Str：要压入的字符</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>将字符串压入</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.Input("你好！世界！")//压入字符</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>你好！世界！</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功打印1，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>如果类中原本有字符的话，使用此函数原字符会被替换。</td>
+                </tr>
+            </table>
+            <!Input-->
+            <br></br>
+            <HR align=center>
+            <!Splicing-->
+            <h1>8.Splicing</h1>
+            <table id="Splicing" border="8">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>char Splicing(const char *Str)</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>const char *Str：要拼接的字符串</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>拼接字符串</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.Splicing("！")//拼接字符串</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>hello word！</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功打印1，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>如果类中原本有字符的话，使用此函数原字符会被替换。</td>
+                </tr>
+            </table>
+            <!Splicing-->
+            <br></br>
+            <HR align=center>
+            <!GetData-->
+            <h1>9.GetData</h1>
+            <table id="GetData" border="9">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>char* GetData()</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>获取字符指针指向的内存空间</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>printf("%s",Str.GetData());</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>hello word</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回字符指针指向的地址空间，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>无</td>
+                </tr>
+            </table>
+            <!GetData-->
+            <br></br>
+            <HR align=center>
+            <!GetReturnData-->
+            <h1>10.GetReturnData</h1>
+            <table id="GetReturnData" border="10">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>char* GetReturnData()</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>拷贝字符指针指向的内存空间，并申请一块新的内存空间来存放拷贝的数据</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>char *copy_str = Str.GetReturnData();//深拷贝<br></br>Str.Relete();<br></br>printf("%s",copy_str);</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>hello word</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回拷贝后的新内存空间，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>如果使用此函数获取了数据，当原类被释放后，此拷贝的字符依旧可以使用，但如果使用GetData获取的就不可以使用了！</td>
+                </tr>
+            </table>
+            <!GetReturnData-->
+            <HR align=center>
+            <!TailoringIndexToIndex-->
+            <h1>11.TailoringIndexToIndex</h1>
+            <table id="TailoringIndexToIndex" border="11">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>int TailoringIndexToIndex()</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>char A：要裁剪的A<br></br>char B：要裁剪的B</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>裁剪符号A和符号B之间的字符串</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.TailoringIndexToIndex('e','w')</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>heword</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回1，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>无</td>
+                </tr>
+            </table>
+            <!TailoringIndexToIndex-->
+            <br></br>
+            <HR align=center>
+            <!Format_Str-->
+            <h1>12.Format_Str</h1>
+            <table id="Format_Str" border="12">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>int Format_Str(T Format,int Index)</th>
+                    <th>template typename T</th>
+
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>T Format：要加入的其它类型数据<br></br>int Index：在第几个字符后加入，给0则覆盖添加</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>加入其它格式的字符</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>int a = 3;<br></br>Str.Format_Str(a,0)</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>示列2</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>int a = 3;<br></br>Str.Format_Str(a,1)</td>
+                </tr>
+                <tr>
+                    <td>输出2</td>
+                    <td>h3ello word</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回1，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>模版函数</td>
+                </tr>
+            </table>
+            <!Format_Str-->
+            <br></br>
+            <HR align=center>
+            <!InsertTxT-->
+            <h1>13.InsertTxT</h1>
+            <table id="InsertTxT" border="13">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>int InsertTxT(const char* Str,int Index)</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>const char* Str：要加入的文本<br></br>int Index：在第几个字符后插入</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>插入文本</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.InsertTxT(“d”,1)</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>hdello word</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回1，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>无</td>
+                </tr>
+            </table>
+            <!InsertTxT-->
+            <br></br>
+            <HR align=center>
+            <!EmptyTxT-->
+            <h1>14.EmptyTxT</h1>
+            <table id="EmptyTxT" border="14">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>int EmptyTxT()</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>清空文本</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.EmptyTxT()</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回1，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>无</td>
+                </tr>
+            </table>
+            <!EmptyTxT-->
+            <br></br>
+            <HR align=center>
+            <!SetTxT-->
+            <h1>15.SetTxT</h1>
+            <table id="SetTxT" border="15">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>int SetTxT()</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>char Str</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>文本统一置值</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.SetTxT('s')</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>ssssssssss</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回1，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>无</td>
+                </tr>
+            </table>
+            <!SetTxT-->
+            <br></br>
+            <HR align=center>
+            <!GetStrTxTIndx-->
+            <h1>16.GetStrTxTIndx</h1>
+            <table id="GetStrTxTIndx" border="16">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>int GetStrTxTIndx(const char* Str)</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>const char* Str：要检索的字符串</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>检索字符串</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>int Index = Str.GetStrTxTIndx('llo')//获取索引</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回索引，失败返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                    <th>二次实现/声明</th>
+                    <th>int GetStrTxTIndxRepeat(const char* Str,int Repeat)</th>
+                    <tr>
+                        <td>参数</td>
+                        <td>const char* Str：要检索的字符串<br></br>
+                         int Repeat：重复次数</td>
+                    </tr>
+                    <tr>
+                        <td>作用</td>
+                        <td>检索字符串</td>
+                    </tr>
+                    <tr>
+                        <td>示列</td>
+                        <td>CharString Str("hello llo word");//字符指针初始化为hello word<br></br>int Index = Str.GetStrTxTIndxRepeat('llo',1)//获取索引</td>
+                    </tr>
+                    <tr>
+                        <td>输出</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>备注</td>
+                        <td>无</td>
+                    </tr>
+                </tr>
+                <tr>
+                    <th>二次实现/声明</th>
+                    <th>int GetStrTxTIndxA(const char* Str)</th>
+                    <tr>
+                        <td>参数</td>
+                        <td>const char* Str：要检索的字符串</td>
+                    </tr>
+                    <tr>
+                        <td>作用</td>
+                        <td>检索字符串</td>
+                    </tr>
+                    <tr>
+                        <td>示列</td>
+                        <td>CharString Str("hello llo word");//字符指针初始化为hello word<br></br>int Index = Str.GetStrTxTIndxA('llo')//获取索引</td>
+                    </tr>
+                    <tr>
+                        <td>输出</td>
+                        <td>6(3+llo大小)</td>
+                    </tr>
+                    <tr>
+                        <td>备注</td>
+                        <td>返回的大小会加上要检索的字符大小</td>
+                    </tr>
+                    <tr>
+                        <th>二次实现/声明</th>
+                        <th>int GetStrTxTIndxRepeatA(const char* Str,int Repeat)</th>
+                        <tr>
+                            <td>参数</td>
+                            <td>const char* Str：要检索的字符串<br></br>
+                                int Repeat：重复次数</td>
+                        </tr>
+                        <tr>
+                            <td>作用</td>
+                            <td>检索字符串</td>
+                        </tr>
+                        <tr>
+                            <td>示列</td>
+                            <td>CharString Str("hello llo word");//字符指针初始化为hello word<br></br>int Index = Str.GetStrTxTIndxRepeatA('llo',1)//获取索引</td>
+                        </tr>
+                        <tr>
+                            <td>输出</td>
+                            <td>10(7+llo大小)</td>
+                        </tr>
+                        <tr>
+                            <td>备注</td>
+                            <td>返回的大小会加上要检索的字符大小</td>
+                        </tr>
+                        <tr>
+                            <th>二次实现/声明</th>
+                            <th>int GetStrTxTIndxRepeatEx(const char* Str,int Repeat)</th>
+                            <tr>
+                                <td>参数</td>
+                                <td>const char* Str：要检索的字符串<br></br>
+                                    int Repeat：重复次数</td>
+                            </tr>
+                            <tr>
+                                <td>作用</td>
+                                <td>检索字符串</td>
+                            </tr>
+                            <tr>
+                                <td>示列</td>
+                                <td>CharString Str("hello llo word");//字符指针初始化为hello word<br></br>int Index = Str.GetStrTxTIndxRepeatEx('llo',1)//获取索引</td>
+                            </tr>
+                            <tr>
+                                <td>输出</td>
+                                <td>11(7+llo大小+1)</td>
+                            </tr>
+                            <tr>
+                                <td>备注</td>
+                                <td>返回的大小会加上要检索的字符大小在+1</td>
+                            </tr>
+                            <tr>
+                                <th>二次实现/声明</th>
+                                <th>int GetStrTxTIndxEx(const char* Str)</th>
+                                <tr>
+                                    <td>参数</td>
+                                    <td>const char* Str：要检索的字符串</td>
+                                </tr>
+                                <tr>
+                                    <td>作用</td>
+                                    <td>检索字符串</td>
+                                </tr>
+                                <tr>
+                                    <td>示列</td>
+                                    <td>CharString Str("hello llo word");//字符指针初始化为hello word<br></br>int Index = Str.GetStrTxTIndxEx('llo')//获取索引</td>
+                                </tr>
+                                <tr>
+                                    <td>输出</td>
+                                    <td>7(3+llo大小+1)</td>
+                                </tr>
+                                <tr>
+                                    <td>备注</td>
+                                    <td>返回的大小会加上要检索的字符大小在+1</td>
+                                </tr>
+            </table>
+            <!GetStrTxTIndx-->
+            <HR align=center>
+            <!JumpTxTExits-->
+            <h1>17.JumpTxTExits</h1>
+            <table id="JumpTxTExits" border="17">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>bool JumpTxTExits()</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>判断文本是否存在</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.JumpTxTExits("llo")</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回true，失败返回false</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>无</td>
+                </tr>
+            </table>
+            <!JumpTxTExits-->
+            <br></br>
+            <HR align=center>
+            <!GetLineTxT-->
+            <h1>18.GetLineTxT</h1>
+            <table id="GetLineTxT" border="18">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>int GetLineTxT(int LineIndex)</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>int LineIndex：要取的第几行文本</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>获取一行文本</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello\nword\n");//字符指针初始化为hello word<br></br>Str.GetLineTxT(2)</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>word</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回取得的文本，错误返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>每行字符必须以\n结尾</td>
+                </tr>
+            </table>
+            <!GetLineTxT-->
+            <br></br>
+            <HR align=center>
+            <!GetLineNum-->
+            <h1>19.GetLineNum</h1>
+            <table id="GetLineNum" border="19">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>int GetLineNum()</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>无</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>获取文本多少行</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello\nword\n");//字符指针初始化为hello word<br></br>Str.GetLineNum()</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回行号，错误返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>每行字符必须以\n结尾</td>
+                </tr>
+            </table>
+            <!GetLineNum-->
+            <br></br>
+            <HR align=center>
+            <!GetTxTLineNum-->
+            <h1>20.GetTxTLineNum</h1>
+            <table id="GetTxTLineNum" border="20">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>int GetTxTLineNum(char *Str)</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>char* Str：要取的文本</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>获取文本所在第几行里</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello\nword\n");//字符指针初始化为hello word<br></br>Str.GetTxTLineNum("word")</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回行号，错误返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>每行字符必须以\n结尾</td>
+                </tr>
+            </table>
+            <!GetTxTLineNum-->
+            <br></br>
+            <HR align=center>
+            <!GetRightTxT
+            <h1>21.GetRightTxT</h1>
+            <table id="GetRightTxT" border="21">
+                <tr>
+                    <th>函数/声明</th>
+                    <th>char* GetRightTxT(int Length)</th>
+                </tr>
+                <tr>
+                    <td>参数</td>
+                    <td>int Length：取右边多少个字符</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>功能</td>
+                </tr>
+                <tr>
+                    <td>作用</td>
+                    <td>取右边字符串</td>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString Str("hello\nword\n");//字符指针初始化为hello word<br></br>char* ristr = Str.GetRightTxT(3)</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>hel</td>
+                </tr>
+                <tr>
+                    <td>返回值：</td>
+                    <td>成功返回获取到的字符串，错误返回0</td>
+                </tr>
+                <tr>
+                    <td>备注</td>
+                    <td>从右边第0个字符开始取</td>
+                </tr>
+            </table>
+            <!GetRightTxT
+            <br></br>
+        <HR align=center>
+        <!GetRightTxT-->
+        <h1>22.GetRightIndex</h1>
+        <table id="GetRightIndex" border="22">
+            <tr>
+                <th>函数/声明</th>
+                <th>int GetRightIndex()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>获取文本索引</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>int ristr = Str.GetRightIndex()</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到的右边有效字符，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex
+        <br></br>
+        <HR align=center>
+        <!GetLeftTxT-->
+        <h1>23.GetLeftTxT</h1>
+        <table id="GetLeftTxT" border="23">
+            <tr>
+                <th>函数/声明</th>
+                <th>int GetLeftTxT(int Length)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>int Length：要获取的左边文本长度</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>获取左边文本</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>char* ristr = Str.GetLeftTxT(2)</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>rd</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到的左边字符，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!GetLeftIndex-->
+        <h1>23.GetLeftIndex</h1>
+        <table id="GetLeftIndex" border="24">
+            <tr>
+                <th>函数/声明</th>
+                <th>int GetLeftIndex()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>获取左边有效文本</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>int ristr = Str.GetLeftIndex()</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到的左边有效字符长度，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetLeftTxT-->
+        <br></br>
+        <HR align=center>
+        <!GetLeftTxT-->
+        <h1>24.GetMiddle</h1>
+        <table id="GetMiddle" border="25">
+            <tr>
+                <th>函数/声明</th>
+                <th>char* GetMiddle(int Length)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>int Length：要获取的中间文本长度</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>获取中间文本</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>char* ristr = Str.GetMiddle(2)</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td> w</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到中间文本向右的字符，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetMiddle-->
+        <br></br>
+        <HR align=center>
+        <!GetMiddleIndex-->
+        <h1>25.GetMiddleIndex</h1>
+        <table id="GetMiddleIndex" border="25">
+            <tr>
+                <th>函数/声明</th>
+                <th>int GetMiddleIndex()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>获取中间文本索引</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>int ristr = Str.GetMiddleIndex()</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到的中间字符索引，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetMiddleIndex-->
+        <br></br>
+        <HR align=center>
+        <!IndexToCharCutOutT-->
+        <h1>26.IndexToCharCutOut</h1>
+        <table id="IndexToCharCutOut" border="26">
+            <tr>
+                <th>函数/声明</th>
+                <th>int IndexToCharCutOut(int Index, char Str)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>int Index：要截取的索引号1<br></br>char Str：要截取的字符</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>索引到字符的截取</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>char* ristr = Str.IndexToCharCutOut(1,'l')</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>e</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回截取的字符，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>字符必须大于索引</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>27.CharToCharCutOut</h1>
+        <table id="CharToCharCutOut" border="27">
+            <tr>
+                <th>函数/声明</th>
+                <th>int CharToCharCutOut(char Str1, char Str2)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>char Str1：要截取的字符1<br></br>char Str2：要截取的字符2</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>字符到字符之间的截取</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>char* ristr = Str.CharToCharCutOut(‘h’,'l')</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>e</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回截取的字符，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>字符1必须大于字符2</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!ThreePoints_AnalysisTxTtoArr-->
+        <h1>28.ThreePoints_AnalysisTxTtoArr</h1>
+        <table id="ThreePoints_AnalysisTxTtoArr" border="28">
+            <tr>
+                <th>函数/声明</th>
+                <th>int ThreePoints_AnalysisTxTtoArr(char Str1, char Str2, char Str3, int Index)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>char Str1：开始符号<br></br>char Str2：中间符号<br></br>int Index：索引</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>三点文本解析，用于解析组合类的格式字符串，每个符号不能相同</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("adx:11,22,33\n");//字符指针初始化<br></br>char* ristr = Str.ThreePoints_AnalysisTxTtoArr(‘:’,',','\n',1)</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>示列2</td>
+                <td>CharString Str("adx:1,2,3\n");//字符指针初始化<br></br>char* ristr = Str.ThreePoints_AnalysisTxTtoArr(‘:’,',','\n',2)</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回截取的字符，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>每个符号不能相同</td>
+            </tr>
+            <tr>
+                <th>二次实现/声明</th>
+                <th>int ThreePoints_AnalysisGetTxTtoArrNum(char Str1, char Str2, char Str3)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>char Str1：开始符号<br></br>char Str2：中间符号<br></br>char Str3：结束符号<br></br>int Index：索引</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>三点文本解析，获取目标组合字符串多少个分割模版</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("adx:11,22,33\n");//字符指针初始化<br></br>int ristr = Str.ThreePoints_AnalysisGetTxTtoArrNum(‘:’,',','\n')</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回可裁剪模版数量，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>每个符号不能相同</td>
+            </tr>
+            <tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>29.CutOutTxT</h1>
+        <table id="CutOutTxT" border="29">
+            <tr>
+                <th>函数/声明</th>
+                <th>int CutOutTxT(char *Str)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>char *Str：要裁剪掉的字符串</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>裁剪字符</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.CharToCharCutOut(" word")</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>hello</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回1，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+             <tr>
+            <th>int CutOutTxT(char Str)</th>
+            <th>重载实现，裁剪字符</th>
+            </tr>
+             <tr>
+            <th>int CutOutTxT(int Index)</th>
+            <th>重载实现，裁剪索引</th>
+             </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>30.TxTReveresOrder_AfterToFront</h1>
+        <table id="TxTReveresOrder_AfterToFront" border="30">
+            <tr>
+                <th>函数/声明</th>
+                <th>int TxTReveresOrder_AfterToFront()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>文本逆序-后到前</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.TxTReveresOrder_AfterToFront()</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>drow olleh</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回1，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <h1>31.TxTReveresOrder_FrontToAfter</h1>
+        <table id="TxTReveresOrder_FrontToAfter" border="31">
+            <tr>
+                <th>函数/声明</th>
+                <th>int TxTReveresOrder_FrontToAfter()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>文本逆序-前到后</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("drow olleh");//字符指针初始化为hello word<br></br>Str.TxTReveresOrder_FrontToAfter()</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>hello word</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回1，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>32.TxTReplace</h1>
+        <table id="TxTReplace" border="32">
+            <tr>
+                <th>函数/声明</th>
+                <th>int TxTReplace(const char* Str1, const char* Str2)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>const char* Str1：要被替换的字符<br></br>const char* Str2：替换的字符</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>文本替换</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.TxTReplace("hello","word")</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>word word</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回1，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无需担心被替换的字符不大于替换的字符，内存会动态增删</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <!CharToCharCutOut-->
+        <h1>重载.TxTReplace</h1>
+        <table id="TxTReplace" border="32">
+            <tr>
+                <th>函数/声明</th>
+                <th>int TxTReplace(int Index, const char* Str1)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>int Index：从第几个字符开始<br></br>const char* Str2：要替换的字符</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>文本替换</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.TxTReplace(1,"wordiii")</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>wordiii word</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回1，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无需担心被替换的字符不大于替换的字符，内存会动态增删</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>33.CORRECT_STR</h1>
+        <table id="CORRECT_STR" border="33">
+            <tr>
+                <th>函数/声明</th>
+                <th>int CORRECT_STR()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>文本替换</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化为hello word<br></br>Str.CORRECT_STR()</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>hello word</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回1，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无需担心被替换的字符不大于替换的字符，内存会动态增删</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>34.GetFormatTwo</h1>
+        <table id="GetFormatTwo" border="34">
+            <tr>
+                <th>函数/声明</th>
+                <th>char* GetFormatTwo(const char Format, int Str_Index)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>const char Format：格式<br></br>int Str_Index：0左，1右</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>格式裁剪</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("上海|苏州");//字符指针初始化为hello word<br></br>Str.GetFormatTwo('|',0)</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>上海</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回取到的，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>35.IF_Char</h1>
+        <table id="IF_Char" border="35">
+            <tr>
+                <th>函数/声明</th>
+                <th>int IF_Char(char Char_)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>char Char_：要判断的字符</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>判断字符是否存在</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("helo");//字符指针初始化<br></br>Str.IF_Char('e')</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回1，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>36.Clip</h1>
+        <table id="Clip" border="36">
+            <tr>
+                <th>函数/声明</th>
+                <th>char* Clip(char Format, int About, int Index = 1, char InFormat = 0x20)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>char Format：格式<br></br>int About：0左，1右<br></br>int Index = 1：要取的索引号<br></br>char InFormat = 0x20：索引分割符</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>裁剪格式字符</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("上海|苏州 北京|徐州");//字符指针初始化<br></br>Str.Clip('|',0,2,' ')</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>北京</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回截取到的值，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <th>二次实现/声明</th>
+                <th>ClipLine(char Format, int About, int Line, int Index = 1, char InFormat = 0x20)</th>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>int Line为要截取的第几行，每行必须是\n结束</td>
+            </tr>
+            <tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>37.STR_IF_CORRECT</h1>
+        <table id="STR_IF_CORRECT" border="37">
+            <tr>
+                <th>函数/声明</th>
+                <th>char* STR_IF_CORRECT()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>判断字符串是否正确</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("上海|苏州 北京|徐州");//字符指针初始化<br></br>Str.STR_IF_CORRECT()</td>
+            </tr>
+            <tr>
+                <td>输出</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回1，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>38.Mid</h1>
+        <table id="Mid" border="38">
+            <tr>
+                <th>函数/声明</th>
+                <th>char* Mid(int Index, int Lent)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>int Index：索引<br></br>int Lent：长度</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>裁剪指定索引后的字符</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化<br></br>Str.Mid(3,4)</td>
+            </tr>
+            <tr>
+                <td>llo </td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到的字符串，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>39.Nsize</h1>
+        <table id="Nsize" border="39">
+            <tr>
+                <th>函数/声明</th>
+                <th>bool Nsize()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>判断字符是否大于0</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化<br></br>Str.Nsize()</td>
+            </tr>
+            <tr>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回真，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>40.JuNum</h1>
+        <table id="JuNum" border="40">
+            <tr>
+                <th>函数/声明</th>
+                <th>bool JuNum(int Index)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>int Index：判断指定索引是否是数字</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>判断指定字符是否是数字</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化<br></br>Str.JuNum(2)</td>
+            </tr>
+            <tr>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回真，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>41.JuNumStr</h1>
+        <table id="JuNumStr" border="41">
+            <tr>
+                <th>函数/声明</th>
+                <th>bool JuNumStr()</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>判断字符串是否是数字</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("hello word");//字符指针初始化<br></br>Str.JuNum()</td>
+            </tr>
+            <tr>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回真，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>42.GetStrAfterNum</h1>
+        <table id="GetStrAfterNum" border="42">
+            <tr>
+                <th>函数/声明</th>
+                <th>int/char* GetStrAfterNum/GetStrAfterNumA(char* Str)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>获取指定字符后的数字</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("he=123 ll");//字符指针初始化<br></br>int t = Str.GetStrAfterNum("he=")</td>
+            </tr>
+            <tr>
+                <td>123</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到的数字，错误返回0</td>
+            </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <th>获取Double</th>
+                <th>int/char* GetStrAfterDouble/GetStrAfterDoubleA(char* Str)</th>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>43.Cin</h1>
+        <table id="Cin" border="43">
+            <tr>
+                <th>函数/声明</th>
+                <th>char* Cin(char Format, int Index)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>char Format：格式<br></br>int Index：索引</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>分式裁剪</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("wec,weo,yun");//字符指针初始化<br></br>int t = Str.GetStrAfterNum(',',1)</td>
+            </tr>
+            <tr>
+                <td>wec</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到的字符，错误返回0</td>
+                </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+        </table>
+        <!GetRightIndex-->
+        <br></br>
+        <HR align=center>
+        <!CharToCharCutOut-->
+        <h1>44.CharSet</h1>
+        <table id="CharSet" border="44">
+            <tr>
+                <th>函数/声明</th>
+                <th>char* CharSet(char Str1, char Str2)</th>
+            </tr>
+            <tr>
+                <td>参数</td>
+                <td>char Str1：被变更的字符<br></br>char Str2：变更的字符</td>
+            </tr>
+            <tr>
+                <td>类型</td>
+                <td>功能</td>
+            </tr>
+            <tr>
+                <td>作用</td>
+                <td>字符变更</td>
+            </tr>
+            <tr>
+                <td>示列</td>
+                <td>CharString Str("wec,weo,yun");//字符指针初始化<br></br>int t = Str.GetStrAfterNum('e','w')</td>
+            </tr>
+            <tr>
+                <td>wwc,wwo,yun</td>
+            </tr>
+            <tr>
+                <td>返回值：</td>
+                <td>成功返回获取到的字符，错误返回0</td>
+                </tr>
+            <tr>
+                <td>备注</td>
+                <td>无</td>
+            </tr>
+                </table>
+        <!GetRightIndex-->
+        <br></br>
+        </div>
+        <div class="syst2">
+            名字：CharString类库 <br></br>
+            作者：17岁boy想当攻城师 <br></br>
+            简介：CharString类库是本人WEB服务器上的一个分支模块<br></br>
+            此库是开源，免费，跨平台<br></br>
+            如果您对此库有更好的建议或者API可以将源代码发送至<br></br>2727056321@qq.com
+            
+        </div>
+        <div class="syst2">
+            支持的运算符<br></br>
+            <table id="CharSet" border="45">
+                <tr>
+                    <th>运算符</th>
+                    <th>=</th>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString str = "123"</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>示列2</td>
+                    <td>CharString str<br></br>str = '1'</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th>运算符</th>
+                    <th>+</th>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString str = "123"<br></br>str + '1'</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>1231</td>
+                </tr>
+                <tr>
+                    <th>运算符</th>
+                    <th>-</th>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString str = "123"<br></br>str - '1'</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <th>运算符</th>
+                    <th>[]</th>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString str = "123"<br></br>str[1]</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th>运算符</th>
+                    <th>%</th>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString str = "1\n2\n3"<br></br>%str</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th>运算符</th>
+                    <th>==</th>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString str = "123"<br></br>str=="345"</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <th>运算符</th>
+                    <th>()</th>
+                </tr>
+                <tr>
+                    <td>示列</td>
+                    <td>CharString str("123")</td>
+                </tr>
+                <tr>
+                    <td>输出</td>
+                    <td>123</td>
+                </tr>
+            </table>
+            
+        </div>
+    </body>
+    
+</html>
+
