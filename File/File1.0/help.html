@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>StorAge类介绍</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.2">
+  <style type="text/css">
+    body {background-color: #3e85e3}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #57a64a; background-color: #1e1e1e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #c8c8c8; background-color: #1e1e1e}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px 'PingFang SC'; color: #57a64a; background-color: #1e1e1e}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #dcdcdc; background-color: #1e1e1e}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #4ec9b0; background-color: #1e1e1e}
+    span.s1 {font: 24.0px Times; font-kerning: none}
+    span.s2 {font-kerning: none}
+    span.s3 {font: 9.5px 'PingFang SC'}
+    span.s4 {color: #dcdcdc}
+    span.s5 {color: #b4b4b4}
+    span.s6 {font: 9.5px Helvetica; color: #dcdcdc}
+    span.s7 {font: 9.5px Helvetica}
+    span.s8 {color: #4ec9b0}
+    span.s9 {color: #569cd6}
+    span.s10 {color: #c8c8c8}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 28.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>File</b></span><span class="s2"><b>类介绍：</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 28.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s2"><b>基于C/C++的文件操作流可跨平台！</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 28.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff; min-height: 24.0px"><span class="s2"></span><br></h1>
+<p class="p3">//<span class="s3">构造</span></p>
+<p class="p4"><span class="s4"><span class="Apple-tab-span">	</span></span>File<span class="s5">();</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>判断文件是否存在</p>
+<p class="p4"><span class="s4"><span class="Apple-tab-span">	</span></span><span class="s8">FILE_FUNC_I</span><span class="s4"> </span>JudegFileStay<span class="s5">(</span><span class="s9">char</span><span class="s4"> </span><span class="s5">*</span><span class="s4">FileName</span><span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>读文件内容</p>
+<p class="p6"><span class="Apple-tab-span">	</span><span class="s8">FILE_FUNC_CP</span> <span class="s10">ReadFile</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span> FileName<span class="s5">,</span> <span class="s9">signed</span> <span class="s9">long</span> <span class="s9">long</span> <span class="s9">int</span><span class="Apple-converted-space">  </span>FileTxT_Seek<span class="s5">,</span> <span class="s9">bool</span> Seek_End<span class="s5">,</span> <span class="s9">bool</span> Binary<span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>写文件内容</p>
+<p class="p6"><span class="Apple-tab-span">	</span><span class="s8">FILE_FUNC_I</span> <span class="s10">WriteFile</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span> FileName<span class="s5">,</span> <span class="s9">void</span> <span class="s5">*</span>Data<span class="s5">,</span> <span class="s9">signed</span> <span class="s9">long</span> <span class="s9">long</span> <span class="s9">int</span> Size<span class="s5">,</span> <span class="s9">bool</span> Binary<span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>文件附加</p>
+<p class="p6"><span class="Apple-tab-span">	</span><span class="s8">FILE_FUNC_I</span> <span class="s10">WriteFileAdd</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span> FileName<span class="s5">,</span> <span class="s9">void</span> <span class="s5">*</span>Data<span class="s5">,</span> <span class="s9">signed</span> <span class="s9">long</span> <span class="s9">long</span> <span class="s9">int</span> Size<span class="s5">,</span> <span class="s9">bool</span> Binary<span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>新建文件</p>
+<p class="p6"><span class="Apple-tab-span">	</span><span class="s8">FILE_FUNC_I</span> <span class="s10">NewFile</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span> FileName<span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>新建文件，文件存储则覆盖</p>
+<p class="p6"><span class="Apple-tab-span">	</span><span class="s8">FILE_FUNC_I</span> <span class="s10">NewFileEx</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span> FileName<span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>删除文件</p>
+<p class="p6"><span class="Apple-tab-span">	</span><span class="s8">FILE_FUNC_I</span> <span class="s10">DeleteFile</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span> FileName<span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>移动文件</p>
+<p class="p6"><span class="Apple-tab-span">	</span><span class="s8">FILE_FUNC_I</span> <span class="s10">MoveFile</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span> FileName1<span class="s5">,</span> <span class="s9">char</span><span class="s5">*</span> FileName2<span class="s5">,</span> <span class="s9">bool</span> Binary<span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>复制文件</p>
+<p class="p6"><span class="Apple-tab-span">	</span><span class="s8">FILE_FUNC_I</span> <span class="s10">CopyFile</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span> FileName1<span class="s5">,</span> <span class="s9">char</span><span class="s5">*</span> FileName2<span class="s5">,</span> <span class="s9">bool</span> Binary<span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>获取文件大小</p>
+<p class="p7"><span class="s4"><span class="Apple-tab-span">	</span></span>FILE_FUNC_LLI<span class="s4"> </span><span class="s10">GetFileSize</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span><span class="s4"> FileName1</span><span class="s5">);</span></p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>占用文件，并不是所有编译器和系统都支持，该函数会占用文件并且其它程序不可读写</p>
+<p class="p5"><span class="s6"><span class="Apple-tab-span">	</span></span><span class="s7">//</span>同时需要文件支持<span class="s7">x</span>特权</p>
+<p class="p7"><span class="s4"><span class="Apple-tab-span">	</span></span>FILE_FUNC_FP<span class="s4"> </span><span class="s10">OccupyFile</span><span class="s5">(</span><span class="s9">char</span><span class="s5">*</span><span class="s4"> FileName</span><span class="s5">);</span></p>
+<p class="p3"><span class="s4"><span class="Apple-tab-span">	</span></span>//<span class="s3">释放</span></p>
+<p class="p7"><span class="s4"><span class="Apple-tab-span">	</span></span>FILE_FUNC_V<span class="s4"> </span><span class="s10">ReleteFIle</span><span class="s5">(</span>FILE<span class="s5">*</span><span class="s4"> FP</span><span class="s5">);</span></p>
+</body>
+</html>
