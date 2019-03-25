@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>StorAge类介绍</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.2">
+  <style type="text/css">
+    body {background-color: #316edc}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px 'PingFang SC'; color: #57a64a; background-color: #1e1e1e}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #c8c8c8; background-color: #1e1e1e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #dcdcdc; background-color: #1e1e1e}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #57a64a; background-color: #1e1e1e}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #4ec9b0; background-color: #1e1e1e}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff; min-height: 33.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 9.5px Helvetica}
+    span.s3 {color: #dcdcdc}
+    span.s4 {color: #b4b4b4}
+    span.s5 {font: 9.5px Helvetica; color: #dcdcdc}
+    span.s6 {color: #c8c8c8}
+    span.s7 {color: #569cd6}
+    span.s8 {color: #4ec9b0}
+    span.s9 {font: 9.5px 'PingFang SC'}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>StorAge存储简介：</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>该文件下有两个目录</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>Source Code：源代码</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>Target FIle：目标文件（DLL，LIB）</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>该存储库使用模版方式实现，由于编译器不能很好的将模版类导出实现代码分割，所以只导出了LIB库，使用时可能报错，建议使用多文件编程的方式调用本库，因为模版函数需要调用时才会被编译，所以很多情况下会出现无法解析的符号！</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>使用方法：</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>List&lt;int&gt; ii;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>Hash&lt;char*&gt; strii;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>List类介绍：</b></span></h1>
+<p class="p2"><span class="s2">//</span>默认构造</p>
+<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span></span>List<span class="s4">();</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>长度构造</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s6">List</span><span class="s4">(</span><span class="s7">int</span> Len<span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>修改数据</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s8">STORAGE_FUNC_I</span> <span class="s6">Modify</span><span class="s4">(</span><span class="s7">int</span> ArrIndex<span class="s4">,</span> <span class="s8">T</span> IutPut_Data<span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">数据置</span>0</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_V<span class="s3"> </span><span class="s6">DataMet</span><span class="s4">();</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>获取头索引</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">Hand</span><span class="s4">();</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>获取尾索引</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">End</span><span class="s4">();</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>获取中间索引</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">In</span><span class="s4">();</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>寻找数据</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_BL<span class="s3"> </span><span class="s6">SeekData</span><span class="s4">(</span>T<span class="s3"> SeekData</span><span class="s4">);</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_BL<span class="s3"> </span><span class="s6">SeekDataToIndex</span><span class="s4">(</span>T<span class="s3"> SeekData</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>获取数据</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s8">T</span> <span class="s6">GetData</span><span class="s4">(</span><span class="s7">int</span> ArrIndex<span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>扩充增加</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">ExpanSion</span><span class="s4">(</span><span class="s7">int</span><span class="s3"> Len</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>动态变更</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">ExpanSionEx</span><span class="s4">(</span><span class="s7">int</span><span class="s3"> Len</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//Add<span class="s9">增加</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">Add</span><span class="s4">(</span>T<span class="s3"> ADD_Data</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>获取大小</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">GetSize</span><span class="s4">();</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>重新增长</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_V<span class="s3"> </span><span class="s6">ReGrow</span><span class="s4">(</span><span class="s7">int</span><span class="s3"> Len</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">删除</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">Delete</span><span class="s4">(</span><span class="s7">int</span><span class="s3"> Len</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>删除指定位置上的数据</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">DeleteIndex</span><span class="s4">(</span><span class="s7">int</span><span class="s3"> Index</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">释放</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_V<span class="s3"> </span><span class="s6">Relete</span><span class="s4">();</span></p>
+<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span></span>~List<span class="s4">();</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">关联式</span>Id<span class="s9">操作</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">为段增加</span>id</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">AddDataId</span><span class="s4">(</span><span class="s7">int</span><span class="s3"> Index</span><span class="s4">,</span><span class="s3"> </span><span class="s7">char</span><span class="s3"> </span><span class="s4">*</span><span class="s3">Id</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>通过<span class="s2">ID</span>找到段索引</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">GetIdToIndex</span><span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Id</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>通过<span class="s2">ID</span>获取数据</p>
+<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span></span><span class="s8">T</span><span class="s3"> </span>GetIdToData<span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Id</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>删除关联<span class="s2">Id,</span>删除<span class="s2">Id</span>不会连同数据一并删除</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">DeleteId</span><span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Id</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>删除关联<span class="s2">Id</span>，同时删除数据</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">DeleteIdData</span><span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Id</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>获取索引关联的<span class="s2">Id</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_CP<span class="s3"> </span><span class="s6">GetIdToIndex</span><span class="s4">(</span><span class="s7">int</span><span class="s3"> Index</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">运算符</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//+</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s8">List</span> <span class="s4">&amp;</span> <span class="s6">operator </span><span class="s4">+</span> <span class="s4">(</span><span class="s8">T</span> AddData<span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//-</p>
+<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span></span><span class="s8">List</span><span class="s3"> </span><span class="s4">&amp;</span><span class="s3"> </span>operator <span class="s4">-</span><span class="s3"> </span><span class="s4">(</span><span class="s7">int</span><span class="s3"> Len</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//[]</p>
+<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span></span><span class="s8">List</span><span class="s3"> </span><span class="s4">&amp;</span><span class="s3"> </span>operator [<span class="s4">]</span><span class="s3"> </span><span class="s4">(</span><span class="s7">int</span><span class="s3"> Len</span><span class="s4">);</span></p>
+<p class="p7"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1">Hash类介绍：</span></p>
+<p class="p8"><span class="s1">哈希类不支持开放地址法</span></p>
+<p class="p8"><span class="s1">原因：</span></p>
+<p class="p8"><span class="s1">经过测试与分析，不建议使用开放地址法，为了避免不可因素的代码冲突将开放地址法删除！</span></p>
+<p class="p8"><span class="s1">如果有需要可以在我博客下载到开放地址法的哈希表代码！</span></p>
+<p class="p2"><span class="s2">//</span>长度构造</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s6">Hash</span><span class="s4">(</span><span class="s7">int</span> Len<span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">初始化</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">InI</span><span class="s4">();</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>计算哈希</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">ComputeHash</span><span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Key</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">查找</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">LookupData</span><span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Key</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">压入</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">Input</span><span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Key</span><span class="s4">,</span><span class="s3"> </span>T<span class="s3"> Data</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">删除</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_V<span class="s3"> </span><span class="s6">Delete</span><span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Key</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">获取</span></p>
+<p class="p3"><span class="s3"><span class="Apple-tab-span">	</span></span><span class="s8">T</span><span class="s3"> </span>GetData<span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Key</span><span class="s4">);</span></p>
+<p class="p5"><span class="s3"><span class="Apple-tab-span">	</span></span>//<span class="s9">修改</span></p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">SetData</span><span class="s4">(</span><span class="s7">char</span><span class="s4">*</span><span class="s3"> Key</span><span class="s4">,</span><span class="s3"> </span>T<span class="s3"> Data</span><span class="s4">);</span></p>
+<p class="p2"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s2">//</span>获取大小</p>
+<p class="p6"><span class="s3"><span class="Apple-tab-span">	</span></span>STORAGE_FUNC_I<span class="s3"> </span><span class="s6">GetHashSize</span><span class="s4">();</span></p>
+</body>
+</html>
