@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>StorAge类介绍</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1671.2">
+  <style type="text/css">
+    body {background-color: #2655d3}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #c8c8c8; background-color: #1e1e1e}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #dcdcdc; background-color: #1e1e1e}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #57a64a; background-color: #1e1e1e}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px 'PingFang SC'; color: #57a64a; background-color: #1e1e1e}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #bd63c5; background-color: #1e1e1e}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px Helvetica; color: #4ec9b0; background-color: #1e1e1e}
+    span.s1 {font-kerning: none}
+    span.s2 {color: #b4b4b4}
+    span.s3 {color: #c8c8c8}
+    span.s4 {color: #569cd6}
+    span.s5 {color: #dcdcdc}
+    span.s6 {font: 9.5px 'PingFang SC'}
+    span.s7 {color: #4ec9b0}
+    span.s8 {color: #bd63c5}
+    span.s9 {font: 9.5px Helvetica; color: #dcdcdc}
+    span.s10 {font: 9.5px Helvetica}
+    span.s11 {color: #b5cea8}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>Web文件体系简介：</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>该文件下有两个目录</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>Source Code：源代码</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>Target FIle：目标文件（DLL，LIB）</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff; min-height: 33.0px"><span class="s1"></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>Web类是强大的socket编程，支持Post，Get请求</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>PUT和Delete请求目前保留，未公开</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>可创建socket通讯以及服务器编程</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 33.0px; font: 24.0px 'Songti SC'; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff"><span class="s1"><b>声明：</b></span></h1>
+<p class="p3">Web<span class="s2">();</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s3">Web</span><span class="s2">(</span><span class="s4">int</span> Len<span class="s2">);</span></p>
+<p class="p3"><span class="s5"><span class="Apple-tab-span">	</span></span>~Web<span class="s2">();</span></p>
+<p class="p5"><span class="s5"><span class="Apple-tab-span">	</span></span>//<span class="s6">创建</span>Socket</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s7">WEB_FUNC_I</span> <span class="s3">CreateSocket</span><span class="s2">(</span><span class="s4">const</span> <span class="s4">char</span><span class="s2">*</span> Ip<span class="s2">,</span> <span class="s4">int</span> Post<span class="s2">,</span> <span class="s4">int</span> CometType <span class="s2">=</span> <span class="s8">WEB_TCP</span><span class="s2">,</span> <span class="s4">int</span> IPParage <span class="s2">=</span> <span class="s8">WEB_IP4</span><span class="s2">,</span> <span class="s4">int</span> SockType <span class="s2">=</span> <span class="s8">WEB_SOCKTYPE_RELIABLE</span><span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>动态修改接收窗口缓冲区大小</p>
+<p class="p3"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s7">WEB_FUNC_I</span><span class="s5"> </span>SetRecvWindowSize<span class="s2">(</span><span class="s4">int</span><span class="s5"> Size</span><span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>动态修改发送窗口缓冲区大小</p>
+<p class="p3"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s7">WEB_FUNC_I</span><span class="s5"> </span>SetSendWindowSize<span class="s2">(</span><span class="s4">int</span><span class="s5"> Size</span><span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>接收数据，阻塞函数</p>
+<p class="p7"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s7">WEB_FUNC_I</span><span class="s5"> </span><span class="s3">RecvData</span><span class="s2">(</span><span class="s4">int</span><span class="s5"> RecvSize </span><span class="s2">=</span><span class="s5"> </span>WEB_RECV_WINDOW<span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>接收数据，最近一次的接收连接</p>
+<p class="p7"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s7">WEB_FUNC_I</span><span class="s5"> </span><span class="s3">RecvNowData</span><span class="s2">(</span><span class="s4">int</span><span class="s5"> RecvSize </span><span class="s2">=</span><span class="s5"> </span>WEB_RECV_WINDOW<span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>获取发送缓冲区数据</p>
+<p class="p8"><span class="s5"><span class="Apple-tab-span">	</span></span>WEB_FUNC_CP<span class="s5"> </span><span class="s3">GetSendData</span><span class="s2">();</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>获取接收缓冲区数据</p>
+<p class="p8"><span class="s5"><span class="Apple-tab-span">	</span></span>WEB_FUNC_CP<span class="s5"> </span><span class="s3">GetRecvData</span><span class="s2">();</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>设置发送缓冲区内容</p>
+<p class="p3"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s7">WEB_FUNC_I</span><span class="s5"> </span>SetSendData<span class="s2">(</span><span class="s4">char</span><span class="s2">*</span><span class="s5"> Data</span><span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>设置接收缓冲区内容</p>
+<p class="p3"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s7">WEB_FUNC_I</span><span class="s5"> </span>SetRecvData<span class="s2">(</span><span class="s4">char</span><span class="s2">*</span><span class="s5"> Data</span><span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>返回最近一次正在连接的<span class="s10">ip</span></p>
+<p class="p8"><span class="s5"><span class="Apple-tab-span">	</span></span>WEB_FUNC_I<span class="s5"> </span><span class="s3">BackData</span><span class="s2">(</span><span class="s4">const</span><span class="s5"> </span><span class="s4">char</span><span class="s2">*</span><span class="s5"> Data</span><span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>发送数据<span class="s10">,</span>阻塞函数</p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s7">WEB_FUNC_I</span> <span class="s3">SendData</span><span class="s2">(</span><span class="s4">const</span> <span class="s4">char</span><span class="s2">*</span> Ip<span class="s2">,</span> <span class="s4">int</span> Port<span class="s2">,</span> <span class="s4">const</span> <span class="s4">char</span><span class="s2">*</span> Data <span class="s2">=</span> <span class="s8">WEB_SEND_DATA</span><span class="s2">,</span> <span class="s4">int</span> CometType <span class="s2">=</span> <span class="s8">WEB_TCP</span><span class="s2">,</span> <span class="s4">int</span> IPParage <span class="s2">=</span> <span class="s8">WEB_IP4</span><span class="s2">,</span> <span class="s4">int</span> SockType <span class="s2">=</span> <span class="s8">WEB_SOCKTYPE_RELIABLE</span><span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>关闭最近一次连接句柄</p>
+<p class="p8"><span class="s5"><span class="Apple-tab-span">	</span></span>WEB_FUNC_I<span class="s5"> </span><span class="s3">Close</span><span class="s2">();</span></p>
+<p class="p5"><span class="s5"><span class="Apple-tab-span">	</span></span>//<span class="s6">获取</span>Socket</p>
+<p class="p3"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s7">WEB_SOCKET</span><span class="s5"> </span>GetSocketHwnd<span class="s2">();</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>获取最近一次的连接句柄</p>
+<p class="p3"><span class="s5"><span class="Apple-tab-span">	</span></span><span class="s7">WEB_SOCKET</span><span class="s5"> </span>GetNowAcceptSock<span class="s2">();</span></p>
+<p class="p5"><span class="s5"><span class="Apple-tab-span">	</span></span>//<span class="s6">设置当前</span>socket<span class="s6">句柄</span></p>
+<p class="p8"><span class="s5"><span class="Apple-tab-span">	</span></span>WEB_FUNC_V<span class="s5"> </span><span class="s3">SetSocketHwnd</span><span class="s2">(</span>WEB_SOCKET<span class="s5"> Sock</span><span class="s2">);</span></p>
+<p class="p6"><span class="s9"><span class="Apple-tab-span">	</span></span><span class="s10">//</span>设置当前连接句柄</p>
+<p class="p8"><span class="s5"><span class="Apple-tab-span">	</span></span>WEB_FUNC_V<span class="s5"> </span><span class="s3">SetNowAcceptSock</span><span class="s2">(</span>WEB_SOCKET<span class="s5"> AcceptSock</span><span class="s2">);</span></p>
+<p class="p5"><span class="s5"><span class="Apple-tab-span">	</span></span>//<span class="s6">释放</span>Socket</p>
+<p class="p8"><span class="s5"><span class="Apple-tab-span">	</span></span>WEB_FUNC_V<span class="s5"> </span><span class="s3">Relete</span><span class="s2">();</span></p>
+<p class="p5"><span class="s5"><span class="Apple-tab-span">	</span></span>//post<span class="s6">提交</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s7">WEB_FUNC_CP</span> <span class="s3">Post</span><span class="s2">(</span><span class="s4">char</span><span class="s2">*</span> ComName<span class="s2">,</span> <span class="s4">const</span> <span class="s4">char</span><span class="s2">*</span> Data<span class="s2">,</span> <span class="s4">bool</span> Hand <span class="s2">=</span> <span class="s4">false</span><span class="s2">,</span> <span class="s4">int</span> Port <span class="s2">=</span> <span class="s11">80</span><span class="s2">,</span> <span class="s4">bool</span> HttpEdition1_1 <span class="s2">=</span> <span class="s4">true</span><span class="s2">);</span></p>
+<p class="p5"><span class="s5"><span class="Apple-tab-span">	</span></span>//get<span class="s6">提交</span></p>
+<p class="p4"><span class="Apple-tab-span">	</span><span class="s7">WEB_FUNC_CP</span> <span class="s3">Get</span><span class="s2">(</span><span class="s4">char</span><span class="s2">*</span> ComName<span class="s2">,</span> <span class="s4">bool</span> Hand <span class="s2">=</span> <span class="s4">false</span><span class="s2">,</span> <span class="s4">int</span> Port <span class="s2">=</span> <span class="s11">80</span><span class="s2">,</span> <span class="s4">bool</span> HttpEdition1_1 <span class="s2">=</span> <span class="s4">true</span><span class="s2">);</span></p>
+</body>
+</html>
